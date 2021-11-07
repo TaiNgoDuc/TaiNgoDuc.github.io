@@ -1,0 +1,332 @@
+.stretch-card>.card {
+    width: 100%;
+    min-width: 100%
+}
+
+body {
+    background-color: #f9f9fa
+}
+
+.flex {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto
+}
+
+@media (max-width:991.98px) {
+    .padding {
+        padding: 1.5rem
+    }
+}
+
+@media (max-width:767.98px) {
+    .padding {
+        padding: 1rem
+    }
+}
+
+.padding {
+    padding: 5rem
+}
+
+.grid-margin,
+.purchace-popup>div {
+    margin-bottom: 25px
+}
+
+.card {
+    border: 0;
+    border-radius: 2px
+}
+
+.card-weather {
+    background: #e1ecff;
+    background-image: linear-gradient(to left bottom, #d6eef6, #dff0fa, #e7f3fc, #eff6fe, #f6f9ff)
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem
+}
+
+.card-weather .card-body:first-child {
+    background: url(https://res.cloudinary.com/dxfq3iotg/image/upload/v1557323760/weather.svg) no-repeat center;
+    background-size: cover
+}
+
+.card .card-body {
+    padding: 1.88rem 1.81rem
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem
+}
+
+.card-weather .weather-date-location {
+    padding: 0 0 38px
+}
+
+.h3,
+h3 {
+    font-size: 1.56rem
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500
+}
+
+.text-gray,
+.card-subtitle,
+.new-accounts ul.chats li.chat-persons a p.joined-date {
+    color: #969696
+}
+
+p {
+    font-size: 13px
+}
+
+.text-gray,
+.card-subtitle,
+.new-accounts ul.chats li.chat-persons a p.joined-date {
+    color: #969696
+}
+
+.card-weather .weather-data {
+    padding: 0 0 4.75rem
+}
+
+.mr-auto,
+.mx-auto {
+    margin-right: auto !important
+}
+
+.display-3 {
+    font-size: 2.5rem
+}
+
+.card-weather .card-body {
+    background: #ffffff
+}
+
+.card-weather .weakly-weather {
+    background: #ffffff;
+    overflow-x: auto
+}
+
+.card-weather .weakly-weather .weakly-weather-item {
+    flex: 0 0 14.28%;
+    border-right: 1px solid #f2f2f2;
+    padding: 1rem;
+    text-align: center
+}
+
+.mb-0,
+.my-0 {
+    margin-bottom: 0 !important
+}
+
+.card-weather .weakly-weather .weakly-weather-item i {
+    font-size: 1.2rem
+}
+
+
+/* đây là wweatherimg  */
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.demo {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+center {
+    font-size: 50px;
+}
+
+.panel {
+    background: linear-gradient(to right, #2980b9, #2c3e50);
+    padding: 0;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05), 0 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.panel .panel-heading {
+    padding: 20px 15px;
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+}
+
+.panel .panel-heading .title {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 40px;
+    margin: 0;
+}
+
+.panel .panel-heading .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+    outline: none;
+}
+
+.panel .panel-heading .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.panel .panel-body {
+    padding: 0;
+}
+
+.panel .panel-body .table thead tr th {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 12px;
+    border: none;
+}
+
+.panel .panel-body .table tbody tr td {
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 12px;
+    vertical-align: middle;
+    border: none;
+}
+
+.panel .panel-body .table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.panel .panel-body .table tbody .action-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.panel .panel-body .table tbody .action-list li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.panel .panel-body .table tbody .action-list li a {
+    color: #fff;
+    font-size: 15px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+}
+
+.panel .panel-body .table tbody .action-list li a:hover {
+    text-shadow: 3px 3px 0 rgba(255, 255, 255, 0.3);
+}
+
+.panel .panel-body .table tbody .action-list li a:before,
+.panel .panel-body .table tbody .action-list li a:after {
+    content: attr(data-tip);
+    color: #fff;
+    background-color: #111;
+    font-size: 12px;
+    padding: 5px 7px;
+    border-radius: 4px;
+    text-transform: capitalize;
+    display: none;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: -32px;
+    transition: all 0.3s ease 0s;
+}
+
+.panel .panel-body .table tbody .action-list li a:after {
+    content: '';
+    height: 15px;
+    width: 15px;
+    padding: 0;
+    border-radius: 0;
+    transform: translateX(-50%) rotate(45deg);
+    top: -18px;
+    z-index: -1;
+}
+
+.panel .panel-body .table tbody .action-list li a:hover:before,
+.panel .panel-body .table tbody .action-list li a:hover:after {
+    display: block;
+}
+
+.pagination {
+    margin: 0;
+}
+
+.pagination li a {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid transparent;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 31px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    margin: 0 3px;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+}
+
+.pagination li a:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.pagination li a:focus,
+.pagination li.active a,
+.pagination li.active a:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.pagination li:first-child a,
+.pagination li:last-child a {
+    border-radius: 50%;
+}
+
+@media only screen and (max-width:767px) {
+    .panel .panel-heading .title {
+        text-align: center;
+        margin: 0 0 10px;
+    }
+    .panel .panel-heading .btn_group {
+        text-align: center;
+    }
+}

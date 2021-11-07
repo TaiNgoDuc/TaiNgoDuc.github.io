@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Register form</title>
+    <link rel="stylesheet" href="registerstyle.css">
+</head>
+
+<body>
+
+    <div class="container ">
+        <div class="img-container">
+            <img src="image/memeicon.png" style="width: fit-content; height: fit-content;">
+        </div>
+        <div class="card ">
+            <div class="inner-box ">
+                <div class="card-front ">
+                    <h2>SIGN UP</h2>
+                    <form>
+                        <li>USERNAME</li>
+                        <input type="text" class="input-box " required>
+                        <li>Email</li>
+                        <input type="email" class="input-box " required>
+                        <li>PASSWORD</li>
+                        <input type="password" class="input-box " required>
+                        <li>Repeat PASSWORD</li>
+                        <input type="password" class="input-box " required>
+                        <input type="checkbox"><span>I agree to the Term of User</span>
+                        <br>
+                        <button type="submit " class="submit-btn" onclick="register()">Sign up</button>
+                        <a href="login.html " class="loginform ">Sign In</a>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function register() {
+            alert("Sign Up successfully. Please login with your account!");
+            window.location.assign('login.html');
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>

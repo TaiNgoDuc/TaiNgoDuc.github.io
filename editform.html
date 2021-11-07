@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>TODAY Task DONE</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="editformstyle.css">
+
+    <!--Edit form-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    EDIT Task
+    <form>
+        Name
+        <input type="text">
+        <br> From
+        <input type="datetime-local" name="fromtime"> To
+        <input type="datetime-local" name="endtime">
+        <br> Location
+        <input type="text">
+        <div class='form-group edit' data-toggle='collapse'>
+            <label for='actionStatus' class='text-primary'>Status</label>
+            <select class='form-control' id='actionStatus'>
+                    <option value='0'>Choose a status</option>
+                    <option value='Open'>DONE</option>
+                    <option value='Closed'>NOT DONE</option>
+            </select>
+        </div>
+        <br> Notes
+        <textarea rows="5" cols="30" name="instuctions" id="instuctions"></textarea>
+        <br>
+        <button name="button" value="OK" type="button" onclick="save()">SAVE</button>
+        <button name="button" value="OK" type="button" onclick="remove()">DELETE</button>
+    </form>
+
+
+
+    <script>
+        function save() {
+            alert("Edit task successfully");
+            window.location.assign('dashboard.html');
+
+        }
+
+        function remove() {
+            alert("Delete task successfully");
+            window.location.assign('dashboard.html');
+
+        }
+
+        // function remove(question, yes, no) {
+        //     if (confirm(question)) yes()
+        //     else no();
+        // }
+
+        // remove(
+        //     "Do you want to DELETE?",
+        //     function() {
+        //         alert
+        //             ("Delete Successfully");
+        //     },
+        //     function() {
+        //         alert
+        //             ("Cancel Deleting");
+        //     },
+
+        // );
+    </script>
+
+</body>
+
+</html>
