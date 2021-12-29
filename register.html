@@ -3,6 +3,7 @@
 <head>
     <title>Register form</title>
     <link rel="stylesheet" href="registerstyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body>
@@ -15,19 +16,19 @@
             <div class="inner-box ">
                 <div class="card-front ">
                     <h2>SIGN UP</h2>
-                    <form>
+                    <form  method="post" onsubmit="return registerFunction()">
                         <li>USERNAME</li>
-                        <input type="text" class="input-box " required>
+                        <input id="username" type="text" class="input-box " required>
                         <li>Email</li>
-                        <input type="email" class="input-box " required>
+                        <input id="email" type="email" class="input-box " required>
                         <li>PASSWORD</li>
-                        <input type="password" class="input-box " required>
+                        <input id="password" type="password" class="input-box " required>
                         <li>Repeat PASSWORD</li>
                         <input type="password" class="input-box " required>
                         <input type="checkbox"><span>I agree to the Term of User</span>
                         <br>
-                        <button type="submit " class="submit-btn" onclick="register()">Sign up</button>
-                        <a href="index.html" class="loginform ">Sign In</a>
+                        <button type="submit" class="submit-btn" >Sign up</button>
+                        <a href="login.html " class="loginform ">Sign In</a>
 
                     </form>
                 </div>
@@ -35,11 +36,57 @@
         </div>
     </div>
     <script>
-        function register() {
-            alert("Sign Up successfully. Please login with your account!");
-            window.location.assign('index.html');
+        // function register() {
+        //     alert("Sign Up successfully. Please login with your account!");
+        //     window.location.assign('login.html');
 
-        }
+        // }
+
+        function registerFunction() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (email == "") {
+                Swal.fire({
+                    text: 'Register failed! Your email is null',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                return false;
+            } else if (password == "") {
+                Swal.fire({
+                    text: 'Register failed! Your password is null',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                return false;
+            } else {
+                const request = new XMLHttpRequest();
+                request.open("POST", "https://tasklist-minh.herokuapp.com/auth");
+                request.setRequestHeader("Content-Type", "application/json");
+                request.send(JSON.stringify({
+                    "email": email,
+                    "password": password
+                }));
+                request.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            Swal.fire({
+                                text: 'Register successful',
+                                icon: 'success',
+                                confirmButtonText: 'OK'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href = 'index.html';
+                                }
+                            });
+                        
+                        };
+                    }
+                }
+                return false;
+            }
+        };
     </script>
 
 

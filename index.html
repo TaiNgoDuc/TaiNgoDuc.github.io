@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <title>Login form</title>
     <link rel="stylesheet" href="loginstyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body>
@@ -13,23 +13,117 @@
                 <div class="card-front">
                     <h2>LOGIN</h2>
                     <a href="register.html">Don't have an account? Register here!</a>
-                    <form>
-                        <input type="email" class="input-box" placeholder="Your Email" required>
-                        <input type="password" class="input-box" placeholder="Your Password" required>
+                    <form method="post" onsubmit="return loginFunction()">
+                        <input type="email" id="email" class="input-box" placeholder="Your Email" required>
+                        <input type="password" id="password" class="input-box" placeholder="Your Password" required>
                         <input type="checkbox"><span>Remember user</span>
                         <a href="forgotpass.html">Forgot pass</a>
-                        <button type="submit" class="submit-btn" onclick="login()">Login</button>
+                        <button type="submit" class="submit-btn">Login</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        function login() {
-            alert("Login successfully");
-            window.location.assign('dashboard.html');
+        // let serverUrl = 'https://tasklist-minh.herokuapp.com/';
 
-        }
+        // const login = async () => {
+        //         let email = document.getElementById('email').value;
+        //         let password = document.getElementById('password').value;
+        //         const response = await fetch(`${serverUrl}/auth/sign_in`,{
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json'
+        //             },
+        //             body: JSON.stringify({
+        //                 email,
+        //                 password
+        //             })
+        //         });
+
+        //         user = {
+        //             'access-token': response.headers.get('access-token'),
+        //             uid: response.headers.get('uid'),
+        //             client: response.headers.get('client')
+        //         };
+        //         localStorage.setItem('user',JSON.stringify(user));
+        //         document.getElementById('currentUser').innerHTML = user.uid;
+        //         console.log(localStorage.getItem("user"));
+        //         return false;
+        //     }
+
+        var jwt = localStorage.getItem("jwt");
+        var uid = null;
+        var client = null;
+
+        function alo123() {
+            console.log(jwt);
+            
+        }    
+
+        
+        // if (jwt != null) {
+        //     window.location.href = 'dashboard.html';
+        // }
+
+        function loginFunction() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (email == "") {
+                Swal.fire({
+                    text: 'Login failed! Your email is null',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                return false;
+            } else if (password == "") {
+                Swal.fire({
+                    text: 'Login failed! Your password is null',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                return false;
+            } else {
+                const request = new XMLHttpRequest();
+                request.open("POST", "https://tasklist-minh.herokuapp.com/auth/sign_in");
+                request.setRequestHeader("Content-Type", "application/json");
+                request.send(JSON.stringify({
+                    "email": email,
+                    "password": password
+                }));
+                request.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        jwt = request.getResponseHeader('Access-Token');
+                        uid = request.getResponseHeader('Uid');
+                        client = request.getResponseHeader('Client');
+                        localStorage.setItem('jwt', jwt);
+                        localStorage.setItem('uid', uid);
+                        localStorage.setItem('client', client);
+                        localStorage.setItem('password', password);
+                        if (this.status == 200) {
+                            Swal.fire({
+                                text: 'Login successful',
+                                icon: 'success',
+                                confirmButtonText: 'OK'
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location.href = 'dashboard.html';
+                                }
+                            });
+                        } else {
+                            Swal.fire({
+                                text: 'Login failed! Your account is not existed. Check your email or password again',
+                                icon: 'error',
+                                confirmButtonText: 'OK'
+                            });
+                        }
+                    }
+                }
+                return false;
+            }
+        };
+
     </script>
 
 
