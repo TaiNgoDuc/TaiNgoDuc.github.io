@@ -15,6 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="addtask.js"></script>
     <!-- calendar -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
         id="bootstrap-css">
@@ -94,7 +95,7 @@
                                 </div>
                             </li>
                             <li>
-                                <button onclick="window.location.href='login.html' ">LOG OUT</button>
+                                <button onclick="window.location.href='index.html' ">LOG OUT</button>
                             </li>
                         </ul>
                     </nav>
@@ -106,11 +107,11 @@
                     <div class="row align-items-center flex-row-reverse ">
                         <div class="col-lg-6 ">
                             <div class="about-text go-to ">
-                                <h3 class="dark-color ">TaiCorn ondahood
+                                <h3 class="dark-color" id="nameofuser">TaiCorn ondahood
                                 </h3>
                                 <p>Sự thật thì luôn đơn giản nhưng <mark>people make it complicated</mark> nên mình cứ
                                     enjoy cái moment này thôi.</p>
-                                <button data-toggle="modal" data-target="#addModal">ADD LIST</button>
+                                <button data-toggle="modal" data-target="#addModal">ADD TASK</button>
                             </div>
                         </div>
                         <div class="col-lg-6 ">
@@ -206,19 +207,18 @@
                                     </div>
                                 </div>
                                 <div class="panel-body table-responsive">
-                                    <table class="table">
-                                        <!-- <thead>
+                                    <table class="table" id="tasklist" >
+                                        <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Full Name</th>
-                                                <th>Age</th>
-                                                <th>Job Title</th>
-                                                <th>City</th>
+                                                <th>Task name</th>
+                                                <th>Status</th>
+                                                <th>Description</th>
                                                 <th>Action</th>
                                             </tr>
-                                        </thead> -->
-                                        <tbody>
-                                            <tr>
+                                        </thead>
+                                         <tbody>
+                                         <tr>
                                                 <td>1</td>
                                                 <td>Ăn bún doumam tom</td>
                                                 <td><input type="checkbox"><span>DONE</span></td>
@@ -233,7 +233,8 @@
                                                     </ul>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                        </tbody>
+                                            <!-- <tr>
                                                 <td>2</td>
                                                 <td>Cày game GTA V</td>
                                                 <td><input type="checkbox"><span>DONE</span></td>
@@ -293,38 +294,10 @@
                                                     </ul>
                                                 </td>
                                             </tr>
-                                        </tbody>
+                                        </tbody> -->
                                     </table>
                                 </div>
-                                <div class="panel-footer">
-                                    <div class="row">
-                                        <div class="col col-sm-6 col-xs-6">showing <b>5</b> out of <b>25</b> entries
-                                        </div>
-                                        <div class="col-sm-6 col-xs-6">
-                                            <ul class="pagination hidden-xs pull-right">
-                                                <li>
-                                                    <a href="#">
-                                                        << /a>
-                                                </li>
-                                                <li class="active"><a href="#">1</a></li>
-                                                <li><a href="#">2</a></li>
-                                                <li><a href="#">3</a></li>
-                                                <li><a href="#">4</a></li>
-                                                <li><a href="#">5</a></li>
-                                                <li><a href="#">></a></li>
-                                            </ul>
-                                            <ul class="pagination visible-xs pull-right">
-                                                <li>
-                                                    <a href="#">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <div class="container">
                                     <div class="row">
                                         <!-- Button trigger modal -->
@@ -414,38 +387,30 @@
                         </div>
                         <div class="modal-body">
                             <div>
-                                <form>
-                                    Name
-                                    <input type="text">
-                                    <br> From
-                                    <input type="datetime-local" name="fromtime"> To
-                                    <input type="datetime-local" name="endtime">
-                                    <br> Location
-                                    <input type="text">
-                
-                                    <br> Notes
-                                    <textarea rows="5" cols="30" name="instuctions" id="instuctions"></textarea>
-                                    <br>
-                                </form>
+                                Task name: <input type='text' id='createTaskname' />
+                                <br>
+                                Description: <input type='text' id='createTaskDescription' />
+                                <!-- Edit: <input type='text' id='createTaskDate' /> -->
+                                <!-- <input type="button" onclick="createTask()" value="create" /> -->
+                                
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Add</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="return createTask()">Add</button>
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
 
 
 </body>
 
+<script>
+    var uid = localStorage.getItem('uid'); 
 
-<style>
+    document.getElementById("nameofuser").innerHTML = uid;
+</script>
 
-</style>
 
 </html>

@@ -28,7 +28,7 @@
                         <input type="checkbox"><span>I agree to the Term of User</span>
                         <br>
                         <button type="submit" class="submit-btn" >Sign up</button>
-                        <a href="login.html " class="loginform ">Sign In</a>
+                        <a href="index.html" class="loginform ">Sign In</a>
 
                     </form>
                 </div>
@@ -36,15 +36,11 @@
         </div>
     </div>
     <script>
-        // function register() {
-        //     alert("Sign Up successfully. Please login with your account!");
-        //     window.location.assign('login.html');
-
-        // }
 
         function registerFunction() {
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
+            const username = document.getElementById("username").value;
 
             if (email == "") {
                 Swal.fire({
@@ -66,7 +62,8 @@
                 request.setRequestHeader("Content-Type", "application/json");
                 request.send(JSON.stringify({
                     "email": email,
-                    "password": password
+                    "password": password,
+                    "name" : username
                 }));
                 request.onreadystatechange = function () {
                     if (this.readyState == 4) {

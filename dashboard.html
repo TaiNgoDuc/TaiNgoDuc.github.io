@@ -73,7 +73,7 @@
                                 </div>
                             </li>
                             <li>
-                                <button onclick="window.location.href='login.html' ">LOG OUT</button>
+                                <button onclick="window.location.href='index.html' ">LOG OUT</button>
                             </li>
                         </ul>
                     </nav>
@@ -85,7 +85,7 @@
                     <div class="row align-items-center flex-row-reverse ">
                         <div class="col-lg-6 ">
                             <div class="about-text go-to ">
-                                <h3 class="dark-color ">TaiCorn ondahood
+                                <h3 class="dark-color" id="nameofuser">TaiCorn ondahood
                                 </h3>
                                 <p>Sự thật thì luôn đơn giản nhưng <mark>people make it complicated</mark> nên mình cứ enjoy cái moment này thôi.</p>
                             </div>
@@ -170,11 +170,11 @@
                                         <table class="table ">
                                             <thead>
                                                 <tr>
-                                                    <th>No.</th>
-                                                    <th>Task</th>
-                                                    <th>Due Date</th>
+                                                    <th>#</th>
+                                                    <th>Task name</th>
                                                     <th>Status</th>
-                                                    <th>Notes</th>
+                                                    <th>Description</th>
+                                                    <th>Action</th>
 
                                                 </tr>
                                             </thead>
@@ -235,8 +235,11 @@
 
 <!--register style-->
 
-<style>
+<script>
+    var uid = localStorage.getItem("uid");
 
-</style>
+    document.getElementById("nameofuser").innerHTML = uid;
+    
+</script>
 
 </html>
