@@ -32,6 +32,14 @@
     margin-top: 20px;
 }
 
+.nav-toggle {
+    display: none;
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
 .nav-toggle img {
     width: 1.5rem;
     transition: 300ms all ease;
