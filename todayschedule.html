@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="todayschedule.js"></script>
-    <script src="logout.js"></script>
+    
     <!-- calendar -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
         id="bootstrap-css">
@@ -42,9 +42,14 @@
         <div class="row ">
             <div class="col " style="background-color: #ffb6c1; border: 1px solid black; ">
                 <div class="class_container ">
-                    <a href="dashboard.html">Dashboard</a>
+                    <div class="nav-toggle" id="navToggle">
+                        <img id="navClosed" class="navIcon" src="https://www.richardmiddleton.me/wp-content/themes/richardcodes/assets/img/hamburger.svg" alt="nav closed">
+                        <img id="navOpen" class="navIcon hidden" src="https://www.richardmiddleton.me/wp-content/themes/richardcodes/assets/img/close.svg" alt="nav open">
+                    </div>
+                    
                     <!--menu bar-->
                     <nav class="navigation ">
+                        <a href="dashboard.html">Dashboard</a>
                         <ul>
                             <li>
                                 <div class="dropdown">
@@ -417,6 +422,9 @@
 
     document.getElementById("nameofuser").innerHTML = name;
 </script>
+
+<script src="logout.js"></script>
+<script src="main.js"></script>
 
 
 </html>

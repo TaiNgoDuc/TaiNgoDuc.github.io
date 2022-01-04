@@ -321,12 +321,45 @@ center {
     border-radius: 50%;
 }
 
-@media only screen and (max-width:767px) {
+.nav-toggle img {
+    width: 1.5rem;
+    transition: 300ms all ease;
+}
+
+.nav-toggle:hover img {
+    opacity: 0.6;
+}
+
+.open {
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+@media only screen and (max-width:720px) {
     .panel .panel-heading .title {
         text-align: center;
         margin: 0 0 10px;
     }
     .panel .panel-heading .btn_group {
         text-align: center;
+    }
+    nav {
+        height: 0;
+        width: 50%;
+        overflow: hidden;
+    }
+    li {
+        display: block;
+        text-align: center;
+        padding: 1.5rem 0;
+    }
+    li a {
+        font-size: 1.4rem;
+    }
+    .nav-toggle {
+        display: block;
     }
 }

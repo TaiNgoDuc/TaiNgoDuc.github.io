@@ -20,8 +20,6 @@ const createTask = async () => {
             name, description
         })
     });
-    // fetchTasklist();
-    // refreshTasks();
 }
 
 

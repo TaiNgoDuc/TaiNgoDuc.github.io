@@ -32,6 +32,23 @@
     margin-top: 20px;
 }
 
+.nav-toggle img {
+    width: 1.5rem;
+    transition: 300ms all ease;
+}
+
+.nav-toggle:hover img {
+    opacity: 0.6;
+}
+
+.open {
+    height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
 img {
     border: 1px solid #ddd;
     /* Gray border */
@@ -46,4 +63,23 @@ img {
 #thumbnail {
     display: block;
     width: 100%;
+}
+
+@media only screen and (max-width:720px) {
+    nav {
+        height: 0;
+        width: 50%;
+        overflow: hidden;
+    }
+    li {
+        display: block;
+        text-align: center;
+        padding: 1.5rem 0;
+    }
+    li a {
+        font-size: 1.4rem;
+    }
+    .nav-toggle {
+        display: block;
+    }
 }
