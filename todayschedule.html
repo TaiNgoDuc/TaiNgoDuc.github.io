@@ -15,7 +15,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script src="addtask.js"></script>
+    <script src="todayschedule.js"></script>
+    <script src="logout.js"></script>
     <!-- calendar -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
         id="bootstrap-css">
@@ -35,7 +36,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body onload="taskListRequest()">
 
     <div class=" col-container ">
         <div class="row ">
@@ -60,9 +61,10 @@
                             </li>
                             <li>
                                 <div class="dropdown">
-                                    <button id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
                                         WEEKLY Task
-                                        </button>
+                                    </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton ">
                                         <a class="dropdown-item" href="#weeklyschedule">Schedule</a>
 
@@ -71,9 +73,10 @@
                             </li>
                             <li>
                                 <div class="dropdown">
-                                    <button id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
                                         MONTHLY Task
-                                        </button>
+                                    </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton ">
                                         <a class="dropdown-item" href="#monthlyschedule">Schedule</a>
 
@@ -95,7 +98,7 @@
                                 </div>
                             </li>
                             <li>
-                                <button onclick="window.location.href='index.html' ">LOG OUT</button>
+                                <button id="logoutbutton">LOG OUT</button>
                             </li>
                         </ul>
                     </nav>
@@ -207,7 +210,7 @@
                                     </div>
                                 </div>
                                 <div class="panel-body table-responsive">
-                                    <table class="table" id="tasklist" >
+                                    <table class="table" id="tasklist">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -217,87 +220,11 @@
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-                                         <tbody>
-                                         <tr>
-                                                <td>1</td>
-                                                <td>Ăn bún doumam tom</td>
-                                                <td><input type="checkbox"><span>DONE</span></td>
-                                                <td>24/10/2021</td>
-
-                                                <td>
-                                                    <ul class="action-list">
-                                                        <li><a href="editform.html" data-tip="edit"><i
-                                                                    class="fa fa-edit"></i></a></li>
-                                                        <li><a href="editform.html" data-tip="delete"><i
-                                                                    class="fa fa-trash"></i></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
+                                        <tbody id="inputtask">
                                         </tbody>
-                                            <!-- <tr>
-                                                <td>2</td>
-                                                <td>Cày game GTA V</td>
-                                                <td><input type="checkbox"><span>DONE</span></td>
-                                                <td>30/10/2021</td>
-
-                                                <td>
-                                                    <ul class="action-list">
-                                                        <li><a href="editform.html" data-tip="edit"><i
-                                                                    class="fa fa-edit"></i></a></li>
-                                                        <li><a href="editform.html" data-tip="delete"><i
-                                                                    class="fa fa-trash"></i></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Chơi game Outlast 1</td>
-                                                <td><input type="checkbox"><span>DONE</span></td>
-                                                <td>30/10/2021</td>
-
-                                                <td>
-                                                    <ul class="action-list">
-                                                        <li><a href="editform.html" data-tip="edit"><i
-                                                                    class="fa fa-edit"></i></a></li>
-                                                        <li><a href="editform.html" data-tip="delete"><i
-                                                                    class="fa fa-trash"></i></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Chơi game Pokemon Diamond</td>
-                                                <td><input type="checkbox"><span>DONE</span></td>
-                                                <td>30/10/2021</td>
-
-                                                <td>
-                                                    <ul class="action-list">
-                                                        <li><a href="editform.html" data-tip="edit"><i
-                                                                    class="fa fa-edit"></i></a></li>
-                                                        <li><a href="editform.html" data-tip="delete"><i
-                                                                    class="fa fa-trash"></i></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Chơi game Pokemon Ruby</td>
-                                                <td><input type="checkbox"><span>DONE</span></td>
-                                                <td>30/10/2021</td>
-
-                                                <td>
-                                                    <ul class="action-list">
-                                                        <li><a href="editform.html" data-tip="edit"><i
-                                                                    class="fa fa-edit"></i></a></li>
-                                                        <li><a href="editform.html" data-tip="delete"><i
-                                                                    class="fa fa-trash"></i></a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                        </tbody> -->
                                     </table>
                                 </div>
-                                
+
                                 <div class="container">
                                     <div class="row">
                                         <!-- Button trigger modal -->
@@ -373,7 +300,7 @@
 
             <div></div>
 
-            
+
 
             <!-- Modal -->
             <div class="modal fade" id="addModal" role="dialog">
@@ -392,14 +319,93 @@
                                 Description: <input type='text' id='createTaskDescription' />
                                 <!-- Edit: <input type='text' id='createTaskDate' /> -->
                                 <!-- <input type="button" onclick="createTask()" value="create" /> -->
-                                
+
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="return createTask()">Add</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"
+                                onclick="return createTask()">Add</button>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="editModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit task</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <form>
+                                    Name
+                                    <input type="text" id="edittaskname">
+                                    <br> Description
+                                    <textarea rows="5" cols="30" name="instuctions" id="instuctions"></textarea>
+                                    <br>
+
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="edittask">Confirm</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal fade" id="deleteModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Delete task</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <form>
+                                    Do you really want to delete this task?
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="deletetask">Confirm</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal fade" id="markCompleteModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Mark completed task</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <form>
+                                    Do you really want to mark this task complete?
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" id="markdone">Confirm</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -407,9 +413,9 @@
 </body>
 
 <script>
-    var uid = localStorage.getItem('uid'); 
+    var name = localStorage.getItem('name');
 
-    document.getElementById("nameofuser").innerHTML = uid;
+    document.getElementById("nameofuser").innerHTML = name;
 </script>
 
 
