@@ -8,7 +8,7 @@ const createTask = async () => {
 
     const name = document.getElementById('createTaskname').value;
     const description = document.getElementById('createTaskDescription').value;
-    const createTaskRequest = await fetch(`https://tasklist-minh.herokuapp.com/task_lists/32/todos`, {
+    const createTaskRequest = await fetch(`https://tasklist-minh.herokuapp.com/task_lists`, {
         method: 'POST',
         headers: {
             'Access-Token': jwt,
@@ -26,7 +26,7 @@ const createTask = async () => {
 function taskListRequest() {
 
     const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", 'https://tasklist-minh.herokuapp.com/task_lists/32/todos');
+    xhttp.open("GET", `https://tasklist-minh.herokuapp.com/task_lists`);
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.setRequestHeader("Access-Token", jwt);
     xhttp.setRequestHeader("Uid", uid);
@@ -116,7 +116,7 @@ function taskListRequest() {
                         var taskdescription = document.getElementById('instuctions').value;
 
                         const request = new XMLHttpRequest();
-                        request.open("PATCH", `https://tasklist-minh.herokuapp.com/task_lists/32/todos/${list['id']}`);
+                        request.open("PATCH", `https://tasklist-minh.herokuapp.com/task_lists/${list['id']}`);
                         request.setRequestHeader("Content-Type", "application/json");
                         request.setRequestHeader("Access-Token", jwt);
                         request.setRequestHeader("Uid", uid);
@@ -128,7 +128,7 @@ function taskListRequest() {
                         }));
                         request.onreadystatechange = function () {
                             if (this.readyState == 4) {
-                                alert('alo123');
+                                alert('Edit task successfully');
 
                             }
                         }
@@ -138,14 +138,14 @@ function taskListRequest() {
                 })
 
                 var deleted = document.getElementsByClassName('taskdelete')[counter];
-                deleted.addEventListener('click', function(){
+                deleted.addEventListener('click', function () {
                     var buttondelete = document.getElementById('deletetask');
 
-                    buttondelete.addEventListener('click', function(){
+                    buttondelete.addEventListener('click', function () {
                         var deletedtask = document.getElementById('deletetask');
 
                         const deleted = new XMLHttpRequest();
-                        deleted.open("DELETE", `https://tasklist-minh.herokuapp.com/task_lists/32/todos/${list['id']}`);
+                        deleted.open("DELETE", `https://tasklist-minh.herokuapp.com/task_lists/${list['id']}`);
                         deleted.setRequestHeader("Content-Type", "application/json");
                         deleted.setRequestHeader("Access-Token", jwt);
                         deleted.setRequestHeader("Uid", uid);
@@ -155,34 +155,33 @@ function taskListRequest() {
 
                         deleted.onreadystatechange = function () {
                             if (this.readyState == 4) {
-                                alert('alo123');
+                                alert('Delete selected task successfully');
 
                             }
                         }
                     })
-
                 })
 
                 var checkdone = document.getElementsByClassName('taskdone')[counter];
-                checkdone.addEventListener('click', function(){
+                checkdone.addEventListener('click', function () {
                     var buttondone = document.getElementById('markdone');
 
-                    buttondone.addEventListener('click', function(){
+                    buttondone.addEventListener('click', function () {
                         var buttoncheck = document.getElementById('markdone');
 
                         const markeddone = new XMLHttpRequest();
-                        markeddone.open("PATCH", `https://tasklist-minh.herokuapp.com/task_lists/32/todos/${list['id']}`);
+                        markeddone.open("PATCH", `https://tasklist-minh.herokuapp.com/task_lists/${list['id']}`);
                         markeddone.setRequestHeader("Content-Type", "application/json");
                         markeddone.setRequestHeader("Access-Token", jwt);
                         markeddone.setRequestHeader("Uid", uid);
                         markeddone.setRequestHeader("Client", client);
 
                         markeddone.send(JSON.stringify({
-                            "done" : true
+                            "done": true
                         }));
                         markeddone.onreadystatechange = function () {
                             if (this.readyState == 4) {
-                                alert('alo123');
+                                alert('Mark Done successfully');
 
                             }
                         }
