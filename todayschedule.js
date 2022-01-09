@@ -170,7 +170,7 @@ function taskListRequest() {
                         var buttoncheck = document.getElementById('markdone');
 
                         const markeddone = new XMLHttpRequest();
-                        markeddone.open("PATCH", `https://tasklist-minh.herokuapp.com/task_lists/${list['id']}`);
+                        markeddone.open("PATCH", `https://tasklist-minh.herokuapp.com/task_lists/${list['id']}/todos`);
                         markeddone.setRequestHeader("Content-Type", "application/json");
                         markeddone.setRequestHeader("Access-Token", jwt);
                         markeddone.setRequestHeader("Uid", uid);
